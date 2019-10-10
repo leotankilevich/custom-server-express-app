@@ -25,7 +25,7 @@ class PostsController {
     this.router.post(this.path, this.createAPost);
   }
 
-  getAllPosts = (req: express.Request, res: express.Response) => {
+  getAllPosts = (res: express.Response) => {
     res.status(200).json(this.posts);
   };
 

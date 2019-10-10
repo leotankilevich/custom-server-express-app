@@ -1,9 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
-import configDb from "../config/db";
 import mongoose from "mongoose";
 
-console.log(configDb);
 export default class Server {
   public server: express.Application;
   public handler: any;
@@ -40,7 +38,7 @@ export default class Server {
 
   private connectToDataBase() {
     mongoose
-      .connect(configDB.url, {
+      .connect("mongodb://mongo:27017/db", {
         useUnifiedTopology: true,
         useNewUrlParser: true
       })
